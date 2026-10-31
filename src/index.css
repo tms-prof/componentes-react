@@ -1,0 +1,111 @@
+/* Variáveis globais: permitem reutilizar valores e
+   alterar o tema do site em um único lugar. */
+:root {
+  --bg: #121212;       /* Fundo escuro da página */
+  --surface: #1e1e1e;  /* Fundo de cards e blocos */
+  --text: #f5f5f5;     /* Cor principal do texto */
+  --primary: #646cff;  /* Cor de destaque, como botões */
+  --radius: 8px;       /* Arredondamento padrão */
+
+  scrollbar-gutter: stable; /* reserva o espaço da barra de rolagem vertical, evitando que o 
+                            conteúdo se mova quando a barra aparece */
+
+  overflow-y: scroll; /* Deixa a barra de rolagem vertical sempre a mostra, mesmo quando não 
+                         há conteúdo suficiente para rolar. Isso evita que o layout "salte" quando 
+                         a barra de rolagem aparece ou desaparece. */
+}
+
+/* Remove margens e preenchimentos padrão do navegador.
+   border-box inclui padding e borda no cálculo da largura
+   e altura dos elementos. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais da página. */
+body {
+  font-family: Arial, sans-serif; /* Fonte simples e disponível */
+  background: var(--bg);          /* Usa a variável de fundo */
+  color: var(--text);             /* Define a cor do texto */
+  line-height: 1.5;                /* Melhora a leitura dos textos */
+}
+
+/* Elemento HTML onde o React renderiza a aplicação. */
+#root {
+  min-height: 100vh; /* Garante, no mínimo, a altura da tela */
+  display:flex;
+  flex-direction: column; /* Organiza header, main e footer verticalmente */
+}
+
+header, footer {
+  display:flex;
+  align-items: center;          /* Centraliza verticalmente */
+  justify-content: center; /* Espaço entre elementos */
+  background: var(--surface);   /* Fundo diferente do body */
+  border-bottom: 1px solid #333; /* Linha sutil separando o header */
+  height: 10vh; 
+  padding: 0 20px; /* Espaço interno para o header */
+}
+
+nav {
+  display: flex; /* Organiza os botões em linha */
+  align-self: center; /* Centraliza verticalmente os botões */
+  justify-content: center; /* Centraliza horizontalmente os botões */
+  width: 50%;
+  gap:40px; /* Faz o nav ocupar toda a largura disponível */
+  
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado padrão */
+  color: var(--text);     /* Usa a cor do texto definida */
+  font-weight: bold;      /* Deixa o texto em negrito */
+  font-size: 1.1em;        /* Aumenta levemente o tamanho da fonte */
+}
+
+a.active {
+  color: tomato;
+}
+
+p {
+  margin: 10px 0; /* Espaço entre parágrafos */
+  width: 60%; /* Limita a largura do texto para melhor leitura */ 
+}
+
+
+
+main {
+ display:flex;
+ flex-direction: column; /* Organiza os elementos verticalmente */
+ align-items: center; /* Centraliza verticalmente */
+ justify-content: center; /* Centraliza horizontalmente */
+ flex:1; /* Faz o main ocupar o espaço restante */
+ padding: 20px; 
+                /* Espaço interno do conteúdo */
+}
+
+
+/* Estilo básico para todos os botões. */
+button {
+  padding: 10px 16px;          /* Espaço interno do botão */
+  border: 0;                   /* Remove a borda padrão */
+  border-radius: var(--radius); /* Reutiliza o arredondamento */
+  background: var(--primary);  /* Usa a cor de destaque */
+  color: white;                /* Contraste com o fundo */
+  cursor: pointer;             /* Indica que é clicável */
+}
+
+/* Efeito visual quando o mouse passa sobre o botão. */
+button:hover {
+  opacity: 0.85; /* Reduz um pouco a opacidade */
+}
+
+/* Classe reutilizável para criar cards. */
+.card {
+  padding: 20px;                /* Espaço entre conteúdo e borda */
+  background: var(--surface);  /* Fundo diferente do body */
+  border-radius: var(--radius); /* Cantos arredondados */
+}
+
