@@ -147,3 +147,18 @@ button:hover {
 .acordeon .resposta-conteudo {
   overflow: hidden; /* essencial: esconde o conteúdo enquanto a altura é 0 */
 }
+
+/* Galeria */
+.galeria-grid {
+  display: grid;
+  gap: 10px; /* Espaço entre as imagens */
+  width: 80%; /* Largura da galeria */
+  margin-top: 20px; /* Espaço acima da galeria */
+}
+
+.galeria-grid img {
+  width: 100%; /* Faz a imagem ocupar toda a célula do grid */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: var(--radius); /* Arredonda os cantos das imagens */
+  display: block; /* Remove o espaço embaixo da imagem */
+}
