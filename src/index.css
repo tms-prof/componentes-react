@@ -79,11 +79,11 @@ p {
 main {
  display:flex;
  flex-direction: column; /* Organiza os elementos verticalmente */
- align-items: center; /* Centraliza verticalmente */
- justify-content: center; /* Centraliza horizontalmente */
+ align-items: center; /* Centraliza horizontalmente */
+ justify-content: flex-start; /* Centraliza verticalmente */
  flex:1; /* Faz o main ocupar o espaço restante */
  padding: 20px; 
-                /* Espaço interno do conteúdo */
+ width: 100%; /* Garante que o main ocupe toda a largura disponível */
 }
 
 
@@ -109,3 +109,36 @@ button:hover {
   border-radius: var(--radius); /* Cantos arredondados */
 }
 
+/* Acordeon */
+
+.acordeon {
+  display:flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.acordeon .pergunta {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.acordeon .resposta {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.acordeon .resposta.aberta {
+  grid-template-rows: 1fr;
+}
+
+.acordeon .resposta-conteudo {
+  overflow: hidden; /* essencial: esconde o conteúdo enquanto a altura é 0 */
+}

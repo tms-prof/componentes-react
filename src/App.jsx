@@ -4,6 +4,7 @@ import Sobre from './components/Sobre';
 import { Routes, Route, Link, NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Contato from './components/Contato';
 
 export default function App() {
   return (
