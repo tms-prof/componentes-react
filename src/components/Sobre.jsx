@@ -1,6 +1,7 @@
 import usestate from "react";
 import Acordeon from "./Acordeon";
 import Galeria from "./Galeria";
+import Carousel from "./Carousel";
 
 const imagens = [
   { src: "https://picsum.photos/id/10/800/600", alt: "Floresta" },
@@ -28,7 +29,7 @@ const imagens = [
 export default function Sobre() {
     return (
             <main>
-              <Galeria arrayImages={imagens} />
+              <Carousel imagens={imagens} cols={{ mobile: 1, tablet: 2, desktop: 3 }} />
             </main>
     );
 

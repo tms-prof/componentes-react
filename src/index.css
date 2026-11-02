@@ -169,3 +169,81 @@ button:hover {
     grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas maiores */
   }
 }
+
+/* Carousel */
+/* Carousel */
+.carousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  height: 60vh;
+}
+
+.carousel-track {
+  display: flex; /* Transforma o track em flexbox */
+  flex-wrap: nowrap; /* IMPEDE que as imagens quebrem linha e criem rows */
+  width: 100%;
+  height: 100%;
+  overflow-x: auto; /* Permite o deslize horizontal comandado pelo JS */
+  scroll-behavior: smooth; /* Deixa o deslize suave */
+  scroll-snap-type: x mandatory; /* Faz a imagem "grudar" no meio da tela ao parar */
+  
+  /* Esconde a barra de rolagem horizontal padrão no Chrome, Safari e Firefox */
+  scrollbar-width: none; 
+}
+.carousel-track::-webkit-scrollbar {
+  display: none; 
+}
+
+/* O tamanho do item é calculado por variáveis, evitando que as imagens amassem */
+.carousel-item {
+  flex: 0 0 calc((100% - (var(--cols-mobile) - 1) * 10px) / var(--cols-mobile)); /* Mobile por padrão */
+  height: 100%;
+  padding: 0 5px;
+  scroll-snap-align: start; /* Alinha o snap no início de cada imagem */
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+/* Media Queries atualizadas para alterar as colunas do Flexbox */
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc((100% - (var(--cols-tablet) - 1) * 10px) / var(--cols-tablet));
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc((100% - (var(--cols-desktop) - 1) * 10px) / var(--cols-desktop));
+  }
+}
+
+/* Estilo fixo dos botões (Sem alterações) */
+button.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.carousel-button-prev { left: 10px; }
+button.carousel-button-next { right: 10px; }
