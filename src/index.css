@@ -119,6 +119,10 @@ button:hover {
   margin-top: 20px;
 }
 
+.acordeon button {
+  font-size: 1.2em;
+}
+
 .acordeon .pergunta {
   display:flex;
   justify-content: space-between;
