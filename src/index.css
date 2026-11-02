@@ -151,6 +151,7 @@ button:hover {
 /* Galeria */
 .galeria-grid {
   display: grid;
+  grid-template-columns: 1fr; /* 1 coluna de tamanho igual */
   gap: 10px; /* Espaço entre as imagens */
   width: 80%; /* Largura da galeria */
   margin-top: 20px; /* Espaço acima da galeria */
@@ -161,4 +162,10 @@ button:hover {
   height: auto; /* Mantém a proporção da imagem */
   border-radius: var(--radius); /* Arredonda os cantos das imagens */
   display: block; /* Remove o espaço embaixo da imagem */
+}
+
+@media (min-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas maiores */
+  }
 }

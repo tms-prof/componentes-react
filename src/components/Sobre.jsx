@@ -28,7 +28,7 @@ const imagens = [
 export default function Sobre() {
     return (
             <main>
-              <Galeria arrayImages={imagens} rows={4} columns={5} />
+              <Galeria arrayImages={imagens} />
             </main>
     );
 
