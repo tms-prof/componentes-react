@@ -30,6 +30,8 @@ export default function Sobre() {
     return (
             <main>
               <Acordeon pergunta={"O que é o React?"} resposta={"Uma biblioteca js para renderização de interfaces usando o conceito de componentes."}/>
+              <Carousel itens={imagens}/>
+              <Galeria arrayImages={imagens}/>
             </main>
     );
 
