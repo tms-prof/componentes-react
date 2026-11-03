@@ -1,7 +1,7 @@
 import usestate from "react";
-import Acordeon from "./Acordeon";
-import Galeria from "./Galeria";
-import Carousel from "./Carousel";
+import Acordeon from "../components/Acordeon";
+import Galeria from "../components/Galeria";
+import Carousel from "../components/Carousel";
 
 const imagens = [
   { src: "https://picsum.photos/id/10/800/600", alt: "Floresta" },
@@ -29,7 +29,7 @@ const imagens = [
 export default function Sobre() {
     return (
             <main>
-              <Carousel imagens={imagens} cols={{ mobile: 1, tablet: 2, desktop: 3 }} />
+              <Acordeon pergunta={"O que é o React?"} resposta={"Uma biblioteca js para renderização de interfaces usando o conceito de componentes."}/>
             </main>
     );
 
